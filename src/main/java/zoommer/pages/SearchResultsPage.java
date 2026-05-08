@@ -21,8 +21,8 @@ public class SearchResultsPage extends BasePage {
         return productCards.size();
     }
 
-    @Step("Get the title text of the first product")
-    public String getFirstProductTitle() {
-        return productCards.first().getText();
+    @Step("Get the URL (href) of the first product link")
+    public String getFirstProductHref() {
+        return productCards.first().getAttribute("href");
     }
 }

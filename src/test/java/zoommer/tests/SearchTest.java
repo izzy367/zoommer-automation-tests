@@ -31,8 +31,8 @@ public class SearchTest extends BaseTest {
         Assert.assertTrue(resultsCount > 0,
                 "Search for '" + SEARCH_QUERY + "' should return at least one product, but returned " + resultsCount);
 
-        String firstProductTitle = resultsPage.getFirstProductTitle();
-        Assert.assertTrue(firstProductTitle.toLowerCase().contains(SEARCH_QUERY.toLowerCase()),
-                "First product title should contain '" + SEARCH_QUERY + "', but was: " + firstProductTitle);
+        String firstProductHref = resultsPage.getFirstProductHref();
+        Assert.assertTrue(firstProductHref != null && firstProductHref.toLowerCase().contains(SEARCH_QUERY.toLowerCase()),
+                "First product URL should contain '" + SEARCH_QUERY + "', but href was: " + firstProductHref);
     }
 }
